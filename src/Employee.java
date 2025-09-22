@@ -1,23 +1,27 @@
 public class Employee {
-    private static int idEmployeeNext = 1;
-    private final String fullName;
+    private String firstName, lastName, middleName;
     private int department, salary;
-    private final int id;
 
-
-    public Employee(String fullName, int department, int salary) {
-        id = idEmployeeNext++;
-        this.fullName = fullName;
+    public Employee(String firstName, String middleName, String lastName, int department, int salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.middleName = middleName;
         this.department = department;
         this.salary = salary;
 
+
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
 
-    //Гетеры
+    public String getLastName() {
+        return lastName;
+    }
 
-    public int getId() {
-        return id;
+    public String getMiddleName() {
+        return middleName;
     }
 
     public int getSalary() {
@@ -28,46 +32,10 @@ public class Employee {
         return department;
     }
 
-    public String getFullName() {
-        return fullName;
-    }
-
-    //Сеттеры
-    public void setDepartment(int department) {
-        this.department = department;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
     @Override
     public String toString() {
-        return id + " Ф.И.О. " + fullName + " отдел " + department + " зарплата " + salary;
+        return "Ф.И.О. " + lastName +" " + firstName + " " + middleName + " отдел " + department + " зарплата " + salary;
     }
-
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        } else if (obj == null || getClass() != obj.getClass()) {
-            return false;
-        } else {
-            Employee e1 = (Employee) obj;
-            return salary == e1.salary;
-        }
-
-    }
-
-    public void printShortInfo() {
-        System.out.println(fullName + " зарплата " + salary);
-    }
-
-    /*public int IndexDepNumber(int DepNumber) {
-        for (int i = 0; i <; i++) {
-
-
-        }
-    }*/
 
 
 }
